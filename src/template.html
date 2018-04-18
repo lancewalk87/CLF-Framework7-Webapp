@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>Shopter</title>
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<!-- Panel -->
+<div class="panel-overlay" id="overlay"></div>
+<div class="panel panel-left panel-cover" id="panel">
+  <div class="content-block">
+    <div class="block-title">
+      <div style="float: left; position: fixed;">
+        <img src="" id="profilePic" width="60"/>
+      </div>
+      <div style="float: right;">
+        <div id="panelName">Name</div>
+        <div id="panelRole">Role</div>
+        <div id="panelEmail">Email</div>
+      </div>
+    </div>
+
+    <!-- Panel Body -->
+
+    <a href="accountPage.html" class="button button-fill color-blue close-panel" id="accountPage-btn"><i class="icon f7-icons" style="float: left; color: black;">at</i>Account Information</a>
+    <a href="#" class="button button-fill color-red close-panel" onclick="window.logout();" id="logout-btn"><i class="icon f7-icons" style="float: left; color: black;">logout</i>Logout</a>
+  </div>
+</div>
+<!-- Views -->
+<div class="views">
+  <div class="view view-main">
+    <div class="pages navbar-fixed toolbar-fixed">
+      <div data-page="index" class="page">
+        <!-- Ajax: page injection -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+</body>
+</html>
