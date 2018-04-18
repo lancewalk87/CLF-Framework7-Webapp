@@ -1,3 +1,8 @@
+/*
+* Created By Lance Walker 
+* April 14, 2018
+*/
+
 // Global dependencies
 require('framework7');
 if (PLATFORM === 'material') { require('./material.less');
