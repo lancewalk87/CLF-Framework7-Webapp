@@ -41,9 +41,6 @@ if(session && session.token && session.user) {
   mainView.router.back({url: 'landingPage.html', force: true});
 }
 
-var feedService = require('./services/feed_service');
-var feedSvc = feedService('ws://199.58.187.114:3000/app');
-
 // Application View Intializers
   // Main
 f7App.onPageInit('landingPage', function(page) { landingPage(navService, sessionSvc).load(Dom7(page.container)); });
