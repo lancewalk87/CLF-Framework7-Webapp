@@ -1,3 +1,8 @@
+// 
+// Created by Lance T. Walker 
+// 5/7/2017
+// 
+
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
